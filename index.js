@@ -32,9 +32,11 @@ async function run() {
     const wheelWhizCollection = wheelWhizDB.collection("wheels")
 
 
-    app.get('/all', async(req, res)=>{
-        const result = await wheelWhizCollection.find().toArray();
-        res.send(result)
+    app.get('/category', async (req, res) => {
+      const category = req.query.category;
+      const query ={subCategory: {$eq: category}}
+      const result = await wheelWhizCollection.find(query).toArray();
+      res.send(result)
     })
 
 
@@ -51,11 +53,11 @@ async function run() {
 run().catch(console.dir);
 
 
-app.get('/', (req, res)=>{
-    res.send('Wheel-whiz')
+app.get('/', (req, res) => {
+  res.send('Wheel-whiz')
 })
 
 
-app.listen(port, ()=>{
-    console.log('Wheel-whiz server running on port:', port)
+app.listen(port, () => {
+  console.log('Wheel-whiz server running on port:', port)
 })
