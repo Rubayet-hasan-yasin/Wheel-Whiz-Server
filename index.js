@@ -44,6 +44,12 @@ async function run() {
       res.send(result)
     })
 
+    app.post('/addToy', async(req, res)=>{
+      const toydata = req.body;
+      const result = await wheelWhizCollection.insertOne(toydata);
+      res.send(result)
+    })
+
 
 
 
