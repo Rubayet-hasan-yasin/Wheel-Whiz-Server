@@ -2,7 +2,7 @@
     {
         "img": "https://i.ibb.co/T0HRsM1/d7f882e9ce01992c44cd54e7fc1e0947.jpg",
         "toyName": "16 FORD MUSTANG GT",
-        "price": "$39.99",
+        "price": 39.99,
         "rating": 4.6,
         "sellerName": "Hot Wheels World",
         "subCategory": "Die-Cast Vehicles",
@@ -13,17 +13,18 @@
     {
         "img": "https://i.ibb.co/ZW5NtwB/ae8d6476a7cda119237d47efda6bbd39.jpg",
         "toyName": "TOYOTA AE86 Sprinter Trueno",
-        "price": "$59.99",
+        "price": 59.99,
         "rating": 4.9,
         "sellerName": "Toy Universe",
         "subCategory": "Die-Cast Vehicles",
         "availableQuantity": 8,
-        "sellerEmail": "Experience the thrill of the TOYOTA AE86 Sprinter Trueno! This Hot Wheels die-cast car pays homage to the iconic AE86, known for its agile handling and striking design. With its pop-up headlights and signature panda-style livery, this model captures the essence of Japanese racing heritage. A must-have for car enthusiasts and collectors, the AE86 Sprinter Trueno embodies timeless automotive excellence. Ignite your passion for cars with this remarkable piece."
+        "sellerEmail": "monstertoyland@example.com",
+        "description": "Experience the thrill of the TOYOTA AE86 Sprinter Trueno! This Hot Wheels die-cast car pays homage to the iconic AE86, known for its agile handling and striking design. With its pop-up headlights and signature panda-style livery, this model captures the essence of Japanese racing heritage. A must-have for car enthusiasts and collectors, the AE86 Sprinter Trueno embodies timeless automotive excellence. Ignite your passion for cars with this remarkable piece."
     },
     {
         "img": "https://i.ibb.co/tZ71ktx/6c3925897639d8d82c1ca1f26259cc03.jpg",
         "toyName": "Hot Wheels Action Figure-8 Track Set",
-        "price": "$19.99",
+        "price": 19.99,
         "rating": 4.4,
         "sellerName": "Monster Toyland",
         "subCategory": "Track Sets",
@@ -34,7 +35,7 @@
     {
         "img": "https://i.ibb.co/VJr1jk8/c1508f62adefb7805998af2298158f3f.jpg",
         "toyName": "Hot Wheels Track Set, City Ultimate Garage Playset, Parking For 100+ Cars",
-        "price": "$12.99",
+        "price": 12.99,
         "rating": 4.7,
         "sellerName": "Speedy Toys",
         "subCategory": "Track Sets",
@@ -45,17 +46,18 @@
     {
         "img": "https://i.ibb.co/NFwY6yS/329a67071e9e2763f59caa8ec053edea.jpg",
         "toyName": "McLAREN SENNA",
-        "price": "$91.99",
+        "price": 91.99,
         "rating": 4.4,
         "sellerName": "Monster Toyland",
         "subCategory": "Premium",
         "availableQuantity": 12,
-        "sellerEmail": "Unleash the power and precision of the McLaren Senna! This Hot Wheels die-cast car captures the essence of the legendary supercar. With its aerodynamic design, sleek lines, and iconic Papaya Orange color, the McLaren Senna is a true symbol of automotive engineering excellence."
+        "sellerEmail": "speedytoys@example.com",
+        "description": "Unleash the power and precision of the McLaren Senna! This Hot Wheels die-cast car captures the essence of the legendary supercar. With its aerodynamic design, sleek lines, and iconic Papaya Orange color, the McLaren Senna is a true symbol of automotive engineering excellence."
     },
     {
         "img": "https://i.ibb.co/K7k2b96/ecac053d8bdd76368f9c23a8024975ba.jpg",
         "toyName": "McLAREN 720S",
-        "price": "$82.99",
+        "price": 82.99,
         "rating": 4.7,
         "sellerName": "Speedy Toys",
         "subCategory": "Premium",

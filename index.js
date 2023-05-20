@@ -35,7 +35,12 @@ async function run() {
     app.get('/category', async (req, res) => {
       const category = req.query.category;
       const query ={subCategory: {$eq: category}}
-      const result = await wheelWhizCollection.find(query).toArray();
+      const result = await wheelWhizCollection.find(query).limit(10).toArray();
+      res.send(result)
+    })
+
+    app.get('/allToys', async(req, res)=>{
+      const result = await wheelWhizCollection.find().limit(20).toArray();
       res.send(result)
     })
 
