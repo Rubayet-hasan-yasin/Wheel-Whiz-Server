@@ -34,16 +34,13 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    
 
     const wheelWhizDB = client.db("wheelWhizDB");
     const wheelWhizCollection = wheelWhizDB.collection("wheels")
 
 
-    const indexKeys = { toyName: 1 };
-    const indexOptions = { name: "ToyScerch" }
-
-    const result = await wheelWhizCollection.createIndex(indexKeys, indexOptions);
+    
 
 
     app.get('/toyNameSearch/:text', async (req, res) => {
