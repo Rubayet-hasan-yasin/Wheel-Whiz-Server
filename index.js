@@ -71,7 +71,6 @@ async function run() {
       const filter = {_id: new ObjectId(id)};
       const option = {upsert: true};
       const updatedToy = req.body;
-console.log(updatedToy);
       const toy = {
         $set: {
           toyName: updatedToy.toyName,
@@ -85,6 +84,14 @@ console.log(updatedToy);
 
       res.send(result)
     })
+
+    app.delete('/deleteToy/:id', async(req, res)=>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      const result = await wheelWhizCollection.deleteOne(query);
+      res.send(result)
+    })
+
 
 
 
