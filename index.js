@@ -40,6 +40,21 @@ async function run() {
     const wheelWhizCollection = wheelWhizDB.collection("wheels")
 
 
+    const indexKeys = { toyName: 1 };
+    const indexOptions = { name: "ToyScerch" }
+
+    const result = await wheelWhizCollection.createIndex(indexKeys, indexOptions);
+
+
+    app.get('/toyNameSearch/:text', async (req, res) => {
+      const searchText = req.params.text;
+      const option = { toyName: {$regex: searchText, $options: "i"}};
+      const result = await wheelWhizCollection.find(option).toArray();
+
+      res.send(result)
+    })
+
+
     app.get('/category', async (req, res) => {
       const category = req.query.category;
       const query = { subCategory: { $eq: category } }
@@ -68,9 +83,9 @@ async function run() {
       }
     })
 
-    app.get('/details/:id', async(req, res)=>{
+    app.get('/details/:id', async (req, res) => {
       const id = req.params.id;
-      const query = {_id: new ObjectId(id)};
+      const query = { _id: new ObjectId(id) };
       const result = await wheelWhizCollection.findOne(query);
       res.send(result)
     })
@@ -81,10 +96,10 @@ async function run() {
       res.send(result)
     })
 
-    app.put('/updateToy/:id', async(req, res)=>{
+    app.put('/updateToy/:id', async (req, res) => {
       const id = req.params.id;
-      const filter = {_id: new ObjectId(id)};
-      const option = {upsert: true};
+      const filter = { _id: new ObjectId(id) };
+      const option = { upsert: true };
       const updatedToy = req.body;
       const toy = {
         $set: {
@@ -100,9 +115,9 @@ async function run() {
       res.send(result)
     })
 
-    app.delete('/deleteToy/:id', async(req, res)=>{
+    app.delete('/deleteToy/:id', async (req, res) => {
       const id = req.params.id;
-      const query = {_id: new ObjectId(id)};
+      const query = { _id: new ObjectId(id) };
       const result = await wheelWhizCollection.deleteOne(query);
       res.send(result)
     })
