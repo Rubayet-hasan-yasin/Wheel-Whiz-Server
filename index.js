@@ -7,6 +7,14 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
+
+// const corsConfig = {
+//   origin: '*',
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE']
+//   }
+//   app.use(cors(corsConfig))
+
 app.use(express.json());
 
 
@@ -58,6 +66,13 @@ async function run() {
         const result = await wheelWhizCollection.findOne(query);
         res.send(result)
       }
+    })
+
+    app.get('/details/:id', async(req, res)=>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      const result = await wheelWhizCollection.findOne(query);
+      res.send(result)
     })
 
     app.post('/addToy', async (req, res) => {
