@@ -34,31 +34,33 @@ async function run() {
 
     app.get('/category', async (req, res) => {
       const category = req.query.category;
-      const query ={subCategory: {$eq: category}}
+      const query = { subCategory: { $eq: category } }
       const result = await wheelWhizCollection.find(query).limit(10).toArray();
       res.send(result)
     })
 
-    app.get('/allToys', async(req, res)=>{
+    app.get('/allToys', async (req, res) => {
       const result = await wheelWhizCollection.find().limit(20).toArray();
       res.send(result)
     })
 
-    app.get('/myToys', async(req, res)=>{
+    app.get('/myToys', async (req, res) => {
       const email = req.query.email;
-      const quary = {sellerEmail: {$eq: email}};
+      const quary = { sellerEmail: { $eq: email } };
       const result = await wheelWhizCollection.find(quary).toArray();
       res.send(result)
     })
 
-    app.get('/updateToy/:id', async(req, res)=>{
+    app.get('/updateToy/:id', async (req, res) => {
       const id = req.params.id;
-      const filter = {_id: new ObjectId(id)}
-      const result = await wheelWhizCollection.findOne(filter);
-      res.send(result)
+      if (ObjectId.isValid(id)) {
+        const query = { _id: new ObjectId(String(id)) };
+        const result = await wheelWhizCollection.findOne(query);
+        res.send(result)
+      }
     })
 
-    app.post('/addToy', async(req, res)=>{
+    app.post('/addToy', async (req, res) => {
       const toydata = req.body;
       const result = await wheelWhizCollection.insertOne(toydata);
       res.send(result)
