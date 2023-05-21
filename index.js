@@ -66,6 +66,26 @@ async function run() {
       res.send(result)
     })
 
+    app.put('/updateToy/:id', async(req, res)=>{
+      const id = req.params.id;
+      const filter = {_id: new ObjectId(id)};
+      const option = {upsert: true};
+      const updatedToy = req.body;
+console.log(updatedToy);
+      const toy = {
+        $set: {
+          toyName: updatedToy.toyName,
+          price: updatedToy.price,
+          availableQuantity: updatedToy.availableQuantity,
+          description: updatedToy.description
+        }
+      };
+
+      const result = await wheelWhizCollection.updateOne(filter, toy, option)
+
+      res.send(result)
+    })
+
 
 
 
